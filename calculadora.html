@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Média Aritmética </title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(45deg, #3494e6, #ec6ead);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        main {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            width: 80%;
+            max-width: 400px;
+        }
+
+        h2 {
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            background: linear-gradient(45deg, #3494e6, #ec6ead);
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background: linear-gradient(45deg, #0f87a6, #b92b6a);
+        }
+
+        #resultado {
+            margin-top: 20px;
+            font-size: 1.5em;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h2>Calculadora de Média Aritmética </h2>
+
+        <label for="nota1">Nota 1:</label>
+        <input type="number" id="nota aluno1" placeholder="Insira a nota 1" required>
+
+        <label for="nota2">Nota 2:</label>
+        <input type="number" id="nota aluno2" placeholder="Insira a nota 2" required>
+
+        <label for="nota3">Nota 3:</label>
+        <input type="number" id="nota aluno3" placeholder="Insira a nota 3" required>
+
+        <button onclick="calcularMedia()">Calcular Média</button>
+
+        <div id="resultado"></div>
+
+        <script>
+            function calcularMedia() {
+                const nota1 = parseFloat(document.getElementById('nota1').value);
+                const nota2 = parseFloat(document.getElementById('nota2').value);
+                const nota3 = parseFloat(document.getElementById('nota3').value);
+
+                const media = (nota1 + nota2 + nota3) / 3;
+
+                document.getElementById('resultado').innerText = `Média: ${media.toFixed(2)}`;
+            }
+        </script>
+    </main>
+</body>
+</html>
